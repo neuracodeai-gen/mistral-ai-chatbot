@@ -1,0 +1,24 @@
+[build]
+  command = "npm run build"
+  functions = "functions"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[functions]
+  # Groq chat function
+  "*" = ["chat.js"]
+
+[template.environment]
+  GROQ_API_KEY = "your_groq_api_key"
+  MODEL_ID = "llama-3.3-70b-versatile"
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"

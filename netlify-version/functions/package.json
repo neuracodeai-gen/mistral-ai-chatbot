@@ -1,0 +1,9 @@
+{
+  "name": "groq-chatbot-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Groq Chatbot",
+  "main": "chat.js",
+  "dependencies": {
+    "groq": "^0.5.0"
+  }
+}
